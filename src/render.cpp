@@ -58,8 +58,8 @@ void Render::Init()
 	// ###
 
 	glClearColor(0, 0, 0, 1);
-	g.shaders["default"] = new Shader({ "shd/default.vert", "shd/default.frag" });
-	g.shaders["compute"] = new Shader({ "shd/compute.comp" });
+	g.shaders["present"] = new Shader({ "shd/present.vert", "shd/present.frag" });
+	g.shaders["mandelbrot"] = new Shader({ "shd/mandelbrot.comp" });
 }
 
 void Render::Close()
@@ -74,7 +74,7 @@ void Render::Update()
 	ImGui::Text("Mouse: %f %f", g.mouseCoord.x, g.mouseCoord.y);
 	ImGui::Text("Pivot: %f %f", g.pivot.x, g.pivot.y);
 
-	Shader* shader = g.shaders["compute"];
+	Shader* shader = g.shaders["mandelbrot"];
 
 	if(g.redrawWindow == true)
 	{
@@ -87,7 +87,7 @@ void Render::Update()
 		g.redrawWindow = false;
 	}
 
-	shader = g.shaders["default"];
+	shader = g.shaders["present"];
 	shader->Use();
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
 }
