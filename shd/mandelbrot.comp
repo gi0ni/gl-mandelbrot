@@ -29,6 +29,7 @@ void main()
 	}
 
 	float sn = n - log2(log2(dot(z, z))) + 4.0;
+	// TODO: Look into Inigo Quilez cosine pallete
 	vec3 color = (sn < 0.5) ? vec3(0) : 0.5 + 0.5 * cos(3.0 + sn * 0.15 + vec3(0.0, 0.6, 1.0));
 
 	imageStore(map, coord, vec4(color, 1));
