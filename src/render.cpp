@@ -71,7 +71,8 @@ void Render::Update()
 	ImGui::Text("%.2f ms, %.2f fps", g.deltaTime * 1000, 1/g.deltaTime);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	ImGui::Text("Pivot: %f %f", g.mouseCoord.x, g.mouseCoord.y);
+	ImGui::Text("Mouse: %f %f", g.mouseCoord.x, g.mouseCoord.y);
+	ImGui::Text("Pivot: %f %f", g.pivot.x, g.pivot.y);
 
 	Shader* shader = g.shaders["compute"];
 
