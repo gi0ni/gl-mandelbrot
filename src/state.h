@@ -37,7 +37,7 @@ class State
 	// Actual data
 	float aspect = windowPx.x/windowPx.y;
 	glm::vec2 mouseCoord;
-	glm::vec2 pivot;
+	glm::vec2 pivot = glm::vec2(0, 0);
 
 	bool firstMouse = true;
 	float zoom = 1.0f;
